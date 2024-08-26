@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 设置网页统一的字体大小、行高、字体系列相关属性 */
+body{
+    font:16px/1.5 "Microsoft Yahei",
+     "Hiragino sans GB","Heiti SC","WenQuanyi Micro Hei",sans-serif;
+     color: #333;
+}
+
+
+/* 清除列表默认样式     list-style(列表样式) */
+ul,
+ol{
+    list-style: none;
+}
+
+
+/* 去除默认倾斜效果 */
+em,
+i{
+    font-style: normal;
+}
+
+/* 去除a标签下划线，并设置文字颜色  a里面是文字所以用 text文字-decoration修饰  ul ol是列表故用list-style(列表样式)*/
+a{
+    text-decoration: none;
+    color: #333;
+}
+

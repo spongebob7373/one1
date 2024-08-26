@@ -1,0 +1,337 @@
+/* banner */
+.banner{
+    height: 500px;
+    background-color: #f5f5f5;
+}
+.banner .wrapper{
+    height: 500px;
+    /* 图片的溢出隐藏效果，需要给父级盒子加，所以在这里  */
+    overflow: hidden;
+    position: relative;
+} 
+/* 图片 */
+.banner .pic {
+    display: flex;
+    /* flex布局，父级宽度不变，子级缩小图片缩小，不想子级缩小，增加父级宽度 */
+    width: 3720px;
+}
+.banner .pic img{
+    width: 1420px;
+    height: 500px;
+}
+/* 侧边栏 */
+.banner .subnav {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 500px;
+    background-color: rgba(0, 0, 0, 0.42);
+}
+.subnav li{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 30px;
+    right: 12px;
+    height: 50px;
+    line-height: 50px;
+    color:#fff;
+    /* 鼠标指针状态  小手 */
+    cursor: pointer;
+}
+.banner .subnav li:hover{
+   background-color:  #00be9a;
+}
+
+/* a都是小字，分类是大字 统一设置所有a，在设置前面的分类*/
+.subnav li a{
+    margin-right: 5px;
+    font-size: 14px;
+    color: #fff;
+}
+.subnav li .clissify {
+    margin-right: 14px;
+    font-size: 16px;
+
+}
+.subnav li .iconfont{
+    font-size: 14px;
+    cursor: pointer;
+}
+/* 圆点指示器 */
+.banner ol{
+    display: flex;
+    position: absolute;
+    bottom: 17px;
+    right: 16px;
+}
+.banner ol li{
+    margin-left: 8px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+}
+.banner ol i{
+    /* i标签默认行内块，转块级宽高生效 */
+    display: block;
+    margin: 4px;
+    width: 14px;
+    height: 14px;
+    background-color:rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+}
+/* 选中时状态 */
+.banner ol .selected {
+    background-color:rgba(255, 255, 255, 0.5);;
+}
+.banner .selected i{
+    background-color:#fff;
+}
+
+
+/* 热门品牌  */
+.brand{
+    margin-top: 60px;
+    height: 468px;
+    background-color: #f5f5f5;
+}
+.brand .wrapper {
+    padding-top: 30px;
+    height: 468px;
+}
+.brand .tittle {
+    position: relative;
+    margin-bottom: 40px;
+}
+.brand .left h3{
+    font-size: 30px;
+}
+.tittle .button{
+    position: absolute;
+    right: 0;
+    bottom: -25;
+    /* 让a在一行显示且宽高生效 */
+    display: flex;
+}
+.brand .button a {
+    margin-left: 5px;
+    width: 20px;
+    height: 20px;
+    color: #fff;
+    text-align: center;
+    line-height: 20px;
+    background-color: #ddd;
+}
+.brand .button .altive {  
+    background-color: #00be9a;
+}  
+.brand ul{
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+.brand ul img{
+    width: 244px;
+    height: 306px;
+}
+
+/* 生鲜 */
+.fresh .tittle{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+.fresh .tittle .right{
+    display: flex;
+}
+.fresh .tittle .right li {
+    margin-top: 10px;
+}
+.fresh .tittle .right ul{
+    display: flex;
+    margin-right: 50px;
+}
+.fresh .tittle ul a{
+    margin-left: 6px;
+    padding: 0 7px;
+    height: 20px;
+    line-height: 20px
+}
+.fresh .tittle ul  .active {
+    color: #f5f5f5;
+    background-color: #00be9a;
+}
+/* 生鲜内容 */
+.content {
+    display: flex;
+    justify-content: space-between;
+}
+.content .left {
+    width: 248px;
+    height: 610px;
+}
+.content .right {
+    width: 968px;
+    height: 610px;
+}
+.content .left img {
+    width: 248px;
+    height: 610px;
+}
+.content .right ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+.content .right li {
+    position: relative;
+    padding: 10px 21px 0;
+    width: 242px;
+    height: 305px;
+    border: 2px solid #fff;
+    /* 隐藏cover部分 */
+    overflow: hidden;
+
+}
+.content .right img {
+    width: 200px;
+    height: 180px;
+}
+.content .right .pic {
+    width: 200px;
+    height: 180px;
+}
+.content .right .txt {
+    margin-top: 16px;
+}
+.content .info {
+    margin-top: 14px;
+    margin-bottom: 5px;
+    height: 60px;
+    line-height: 19px;
+}
+.content .price p {
+    color: #AF2F22;
+}
+.content .price p span {
+    margin-left: 5px;
+    font-size: 22px;
+}
+/* 产品绿色底部区域 */
+.content li .cover {
+    position: absolute;
+    left: 0;
+    bottom: -86px;
+    padding-top: 15px;
+    width: 242px;
+    height: 77px;
+    background-color: #00be9a;
+    text-align: center;
+    /* 浮动效果 */
+    transition: all 0.5s;
+}
+.content li .cover a {
+    color: #fff;
+}
+.content .cover p:nth-child(1) a{
+    font-size: 18px;
+}
+.content .cover p:nth-child(2) {
+    margin: 3px auto 6px;
+    width: 120px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.11);
+}
+.content .cover p:nth-child(3) {
+    font-size: 13px;
+}
+.content .cover p:nth-child(3) .iconfont{
+    font-size: 13px;
+}
+/* 鼠标悬停状态 */
+.content li:hover .cover {
+    bottom: 0;
+}
+.content li:hover {
+    border: 2px solid #00be9a;
+}
+
+
+/* 最新专题 */
+.topic .tittle {
+    margin-top: 40px;
+}
+.topic-bd ul {
+    display: flex;
+    justify-content: space-between;
+}
+.topic-bd li {
+    width: 405px;
+    height: 355px;
+}
+.topic-bd img {
+    width: 405px;
+    height: 288px;
+}
+.topic-bd .pic {
+    position: relative;
+    width: 405px;
+    height: 288px;
+}
+.topic-bd .txt {
+    display: flex;
+    justify-content: space-between;
+    /* 侧轴对齐方式 */
+    align-items: center;
+    padding: 0 15px;
+    width: 405px;
+    height: 67px;
+    font-size: 14px;
+    color: #666;
+}
+.topic-bd .txt .left {
+    display: flex;
+}
+.topic-bd .txt .left p {
+    margin-right: 20px;
+}
+.topic-bd .txt .left .iconfont {
+    color: #000;
+}
+.topic-bd .txt .left p:nth-child(1) .iconfont {
+    color: #AF2F22;
+}
+/* 文字悬浮效果 */
+.topic-bd .cover {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 15px;
+    width: 405px;
+    height: 90px;
+    /* 背景颜色渐变效果 */
+    background-image: linear-gradient(180deg, rgba(137,137,137,0.00) 0%, rgba(0,0,0,0.90) 100%);
+}
+.topic-bd .cover .left {
+    color: #fff;
+}
+.topic-bd .cover .left h4 {
+    margin-bottom: 6px;
+    font-size: 20px;
+}
+.topic-bd .cover .right {
+    padding: 0 7px;
+    /* 这个地方不设置宽因为是价格会经常改动 */
+    height: 25px;
+    background-color: #fff;
+    font-size: 15px;
+    color: #AF2F22;
+}
+.topic-bd .cover .right span {
+    font-size: 18px;
+}

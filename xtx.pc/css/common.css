@@ -1,0 +1,334 @@
+/* 头、尾、各个页面相同的样式 */
+
+/* 版心 */
+.wrapper{
+    margin: 0 auto;
+    width: 1240px;
+}
+
+/* 快捷导航 */
+.fan {
+    height: 52px;
+    background-color: #333;
+}
+.fan .wrapper{
+    display: flex;
+    /* 主轴对齐方式:使内容到最后 */
+    justify-content: flex-end;
+    height: 52px;
+}
+.fan .wrapper ul{
+    display: flex;
+    line-height: 52px;
+}
+
+.fan  a{
+    padding:0 15px;
+    border-right:1px solid #999;
+    font-size: 14px;
+    color: #fff;
+
+}
+.fan li:last-child a{
+    border-right: 0;
+}
+.fan .iconfont{
+    padding-right: 5px;
+    /* 使图标与文字对齐 */
+    vertical-align: middle;
+}
+.fan .login{
+    color: #5eb69c;
+}
+
+/* header */
+.head {
+    display: flex;
+    margin-top: 22px;
+    margin-bottom: 22px;
+    height: 88px;
+}
+
+/* logo */
+.head .logo{   
+    margin-right: 40px; 
+    width: 200px;
+    height: 88px;
+}
+.head .logo a{
+    /* 现在的a是 flex 宽高不生效，需要转成 block */
+    display: block;
+    width: 200px;
+    height: 88px;
+    font-size: 0;
+    background-image: url(../images/logo.png);
+    background-size: 200px 88px;
+}
+
+/* 导航 */
+.nav{
+    margin-top: 33px;
+    /* 测量到的一共间距减li的由右边距 */
+    margin-right: 28px;
+}
+.nav ul{
+    display: flex;
+}
+.nav li{
+    margin-right: 42px;
+}
+.nav a{
+    padding-bottom: 10px;
+}
+.nav a:hover{
+    color: #5eb69c;
+    border-bottom: 2px solid #5eb69c;
+}
+
+
+/* 搜索 */
+.search{
+    display: flex;
+    margin-top: 33px;
+    margin-right: 45px;
+    width: 170px;
+    height: 34px;
+    border: 2px solid #f4f4f4;
+}
+.search .iconfont {
+    margin-right: 8px;
+    font-size: 18px;
+    color: #ccc;
+}
+.search input{
+    /* flex:1(扩展填充剩余部分) 在这里单独使用不生效  因为浏览器优先生效 input 默认宽度 */
+    flex:1;
+    /* 上一个步骤的解决办法，重置 input 默认宽度 → "width:0"*/
+    width: 0;
+    border: 0;
+}
+.search input::placeholder{
+    font-size: 16px;
+    color: #ccc;
+}
+/* 去掉点击时input 出现的黑边框 */
+.search input:focus{
+    outline: none;
+}
+
+/* 购物车 */
+.cart{
+    /* 定位    相当 */
+    position: relative;
+    margin-top: 34px;
+}
+.cart .iconfont{
+    font-size: 24px;
+}
+.cart i{
+    /* 定位    绝对 */
+    position: absolute;
+    /* 购物车上的的小圆泡泡一般写往左撑开，因为往右不好看 */
+    /* right:定位右对齐：如果文字多了就会像左撑开，会遮挡前面的内容，也不好看 */
+    /* lieft：定位左对齐：如果文字多了向右撑开 */
+    left: 15px;
+    top: 1;
+    padding: 0 6px;
+    height: 15px;
+    background-color: red;
+    font-size: 14px;
+    line-height: 15px;
+    color: #fffEFE;
+    border-radius:8px;
+}
+
+
+
+
+/* 底部 */
+.footer{
+    margin-top: 50px;
+    height: 580px;
+    background-color: #f5f5f5;
+}
+/* 服务 */
+.footer .service {
+    /* 这里需要加内边距，加外边距盒子会塌 */
+    padding:60px 0;
+    height: 178px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.service ul {
+    display: flex;
+    justify-content: space-around;
+      
+}
+.service li{
+    display: flex;
+    width: 190px;
+    height: 58px;
+    
+}
+.service h3 {
+    vertical-align: middle;
+    margin-right: 20px;
+    width: 58px;
+    height: 58px;
+    background-image: url(../images/service.png) ;
+    /* 天猫精灵 */
+    background-position: -226px -180px;
+}
+.service li:nth-child(2) h3{
+    background-position: -227px -233px;
+}
+.service li:nth-child(3) h3{
+    background-position: -226px -288px;
+}
+.service li:nth-child(4) h3{
+    background-position: -226px -344px;
+}
+.service p{
+    font-size: 28px;
+    /* 这样直接就使图片与文字垂直居中对齐了 */
+    line-height: 58px;
+}
+
+/* 帮助 */
+.help{
+    display: flex;
+    /* 使两大内容一左一右 */
+    justify-content: space-between;
+    padding-top: 60px;
+    height: 300px;
+}
+.help .left{
+    display: flex;
+}
+.footer .left dl{
+    margin-right: 84px;
+}
+.footer .left dl:last-child{
+      /* 这里因为已经加了 justify-content: space-between;使文字一左一右，所以去掉最后一个dl的右边距，以方便以后改文字，不用频繁的去调试 */
+    margin-right: 0;
+}
+.footer .left dt{
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+.footer .left dd{
+    margin-bottom: 10px;
+    color: #999;
+}
+/* 给a里面的文字加样式，需要准确的加到a 身上 */
+.footer .left a{
+    color: #969696;
+}
+.left .iconfont{
+    color: #5eb69c;
+}
+
+.footer .right ul{
+    display: flex;
+}
+.footer .right li:first-child{
+    margin-right:55px ;
+}
+.footer .right img{
+    margin-top: 10px;
+    width: 120px;
+    height: 120px;
+}
+.footer .right p{
+    text-align: center;
+    color: #969696;
+}
+/* 版权 */
+.footer .copyright{
+    text-align: center;
+}
+.copyright p a{
+    padding: 0 5px;
+    color: #969696;
+}
+.copyright p{
+    margin-bottom: 10px;
+    color: #969696;
+}
+
+
+
+/* 生鲜好物 */
+/* 标题-公共样式 */
+.tittle{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    height: 42px;
+}
+.tittle .left {
+    display: flex;
+    
+}
+.tittle .left h3{
+    margin-right: 35px;
+
+    font-size: 30px;
+}
+.tittle .left p{
+    /* 主轴对齐方式 */
+    align-self: flex-end;
+    padding-top: 15px;
+    color:#a1a1a1;
+}
+.tittle .right .more{
+    line-height: 42px;
+    color: #a1a1a1;
+}
+.tittle .right .more .iconfont{
+    margin-left: 10px;
+}
+/* 内容 -公共样式 */
+.bd ul{
+    display: flex;
+    justify-content: space-between;
+}
+.bd li a img{
+    width: 304px;
+    height: 300px;
+}
+.bd li {
+    width: 304px;
+    height: 404px;
+    background-color: #eef9f4;
+}
+.bd li .pic {
+    width: 304px;
+    height: 300px;
+}
+.bd .txt{
+    text-align: center;
+}
+.bd li a h4 {
+    margin-top: 18px;
+    margin-bottom: 8px;
+    font-size: 22px;
+    font-weight: 400;
+}
+.goods .bd li p {
+    font-size: 18px;
+    color: #aa2113;
+}
+.goods .bd li p{
+    font-size: 20px;
+}
+.recommend .tittle{
+    display: flex;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    height: 42px;
+}
+.recommend .bd p {
+    color:#a1a1a1;
+}
